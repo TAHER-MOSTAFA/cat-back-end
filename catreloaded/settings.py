@@ -24,7 +24,7 @@ SECRET_KEY = 'bz@%uyi*$s2@9_&3tkd)zv#ez)lo@yi+n*#s6^fb2w)@5nxk@c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'catreloaded.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'catreloaded',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': 5432
     }
 }
