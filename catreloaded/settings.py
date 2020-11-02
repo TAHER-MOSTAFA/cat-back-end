@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'catreloaded.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'catreloaded',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'db',
