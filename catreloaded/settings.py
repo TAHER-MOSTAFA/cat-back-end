@@ -19,10 +19,10 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-SECRET_KEY = 'bz@%uyi*$s2@9_&3tkd)zv#ez)lo@yi+n*#s6^fb2w)@5nxk@c'
+SECRET_KEY = os.getenv('SECRET_KEY',"foo")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.getenv('DEBUG',0))
 
 ALLOWED_HOSTS = ['*']
 
@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'catreloaded.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'catreloaded',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': os.getenv("POSTGRES_DB"),
+        'USER': os.getenv("POSTGRES_USER"),
+        'PASSWORD': os.getenv("POSTGRES_PASSWORD"),
         'HOST': 'db',
         'PORT': 5432
     }
